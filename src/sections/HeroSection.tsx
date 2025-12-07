@@ -35,18 +35,17 @@ export function HeroSection() {
             </div>
           </div>
           <h1
-            className="bg-clip-text text-[clamp(2.75rem,9.6vw,5.4rem)] font-display font-semibold leading-tight tracking-tight text-transparent -mt-3 sm:-mt-4"
+            className="bg-clip-text text-[clamp(2.2rem,7.68vw,4.32rem)] font-display font-semibold leading-tight tracking-tight text-transparent -mt-3 sm:-mt-4"
             style={{
               backgroundImage:
                 "linear-gradient(92deg,var(--color-1) 0%, var(--color-2) 48%, var(--color-5) 100%)",
             }}
           >
-            The visitor intelligence layer that did not exist…{" "}
-            <em className="italic">till now</em>.
+            One visitor intelligence view for your entire destination and every operator within it.
           </h1>
           <p className="max-w-3xl text-lg text-neutral-700 sm:text-xl md:text-2xl">
-            nrtureAI connects emotion, intent and conversion triggers into clear actions so your team knows exactly what
-            drives outcomes today.
+            nrtureAI unifies real visitor voice and reputation signals across destinations and operators in a single clear
+            view.
           </p>
           <div className="mt-6 flex w-full justify-center">
             <a
