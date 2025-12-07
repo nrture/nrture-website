@@ -126,22 +126,49 @@ a {
     animation: aurora 70s linear infinite;
   }
 
-  @keyframes nav-aurora-shift {
+  @keyframes nav-aurora-orbit {
     0% {
-      background-position: 0% 50%;
+      background-position: 45% 55%;
     }
-    50% {
-      background-position: 120% 50%;
+    20% {
+      background-position: 75% 30%;
+    }
+    40% {
+      background-position: 65% 75%;
+    }
+    60% {
+      background-position: 25% 65%;
+    }
+    80% {
+      background-position: 30% 30%;
     }
     100% {
-      background-position: 0% 50%;
+      background-position: 45% 55%;
+    }
+  }
+
+  @keyframes nav-aurora-hue {
+    0% {
+      filter: hue-rotate(-18deg) saturate(1.1) brightness(1);
+    }
+    33% {
+      filter: hue-rotate(22deg) saturate(1.28) brightness(1.05);
+    }
+    66% {
+      filter: hue-rotate(-35deg) saturate(1.2) brightness(0.97);
+    }
+    100% {
+      filter: hue-rotate(-18deg) saturate(1.1) brightness(1);
     }
   }
 
   .nav-aurora-halo {
     background-size: 260% 260%;
-    animation: nav-aurora-shift 12s ease-in-out infinite;
-    will-change: background-position;
+    background-position: 45% 55%;
+    animation:
+      nav-aurora-orbit 18s ease-in-out infinite alternate,
+      nav-aurora-hue 26s ease-in-out infinite;
+    will-change: background-position, filter;
   }
 
   @keyframes nav-aurora-strobe {

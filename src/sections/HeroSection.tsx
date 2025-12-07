@@ -22,13 +22,13 @@ export function HeroSection() {
           </div>
         </div>
         <div className="hero-content mx-auto flex w-full max-w-5xl flex-col items-center gap-6 px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-12 sm:pb-16 md:gap-8 md:pt-16">
-          <div className="flex flex-col items-center gap-3 text-xs font-semibold uppercase tracking-wide text-neutral-600 sm:flex-row sm:gap-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/40 px-4 py-2 text-[0.75rem] font-semibold text-neutral-800/90 backdrop-blur">
+          <div className="relative z-20 flex flex-col items-center gap-3 text-xs font-semibold uppercase tracking-wide text-neutral-600 sm:flex-row sm:gap-4">
+            <div className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]">
               <span className="inline-flex items-center gap-2">
                 Published research on visitor behavior
               </span>
             </div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/40 px-4 py-2 text-[0.75rem] font-semibold text-neutral-800/90 backdrop-blur">
+            <div className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]">
               <span className="inline-flex items-center gap-2">
                 Trained on 150M+ data points. 
               </span>
@@ -51,7 +51,9 @@ export function HeroSection() {
           <div className="mt-6 flex w-full justify-center">
             <a
               href="https://elara.nrture.ai/book-a-demo/"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-sky-200/60 transition hover:shadow-sky-300/70"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 px-8 py-3 text-base font-semibold text-white hover:!text-white hover:from-[#f0c7ff] hover:via-[#c880ff] hover:to-[#efb5ff] shadow-lg shadow-sky-200/60 transition-all duration-300"
             >
               <svg
                 viewBox="0 0 24 24"

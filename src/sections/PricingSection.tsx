@@ -75,22 +75,24 @@ export function PricingSection() {
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white">Pricing</p>
         </div>
 
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-[clamp(2.4rem,4vw,3.4rem)] font-display font-semibold leading-tight">
+        <div className="mx-auto space-y-4 text-center">
+          <h2 className="mx-auto max-w-6xl text-[clamp(2.4rem,4vw,3.4rem)] font-display font-semibold leading-tight">
             For operators of all sizes, nrtureAI is built to match your pace and your ambition.
           </h2>
-          <p className="text-lg text-white/85">
+          <p className="mx-auto max-w-3xl text-lg text-white/85">
             Whether you run one outlet or an entire destination, our pricing scales clearly with your footprint and the visitor
             experiences you want to elevate.
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {plans.map((plan) => (
-            <div
-              key={plan.key}
-              className="flex h-full flex-col rounded-[28px] border border-white/15 bg-white/95 p-6 text-ink shadow-[0_25px_65px_rgba(15,23,42,0.18)] backdrop-blur"
-            >
+          {plans.map((plan) => {
+            const isContactLink = plan.ctaLabel.toLowerCase().includes("contact");
+            return (
+              <div
+                key={plan.key}
+                className="flex h-full flex-col rounded-[28px] border border-white/15 bg-white/95 p-6 text-ink shadow-[0_25px_65px_rgba(15,23,42,0.18)] backdrop-blur"
+              >
               <div className="mb-4 flex items-center justify-between">
                 <p className="text-xl font-display font-semibold">{plan.name}</p>
                 {plan.highlight && (
@@ -120,14 +122,17 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <a
-                href={plan.ctaHref}
-                className="mt-8 inline-flex items-center justify-center rounded-2xl bg-[#101828] px-4 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#101828]"
-              >
-                {plan.ctaLabel}
-              </a>
-            </div>
-          ))}
+                <a
+                  href={plan.ctaHref}
+                  target={isContactLink ? undefined : "_blank"}
+                  rel={isContactLink ? undefined : "noopener noreferrer"}
+                  className="mt-8 inline-flex items-center justify-center rounded-2xl bg-[#101828] px-4 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#101828]"
+                >
+                  {plan.ctaLabel}
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

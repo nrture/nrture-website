@@ -19,10 +19,20 @@ export function Footer() {
               Contact Us
             </a>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-neutral-600 sm:justify-end">
-              <a href="/privacy-policy" className="underline-offset-4 transition hover:text-ink hover:underline">
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-4 transition hover:text-ink hover:underline"
+              >
                 Privacy Policy
               </a>
-              <a href="#terms" className="underline-offset-4 transition hover:text-ink hover:underline">
+              <a
+                href="#terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-4 transition hover:text-ink hover:underline"
+              >
                 Terms &amp; Conditions
               </a>
             </div>

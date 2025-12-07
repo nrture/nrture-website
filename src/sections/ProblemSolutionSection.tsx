@@ -71,7 +71,7 @@ export function ProblemSolutionSection() {
                   Your 24/7 AI Social Reputation Manager
                 </h2>
               </div>
-              <div className="space-y-4 text-[0.88rem] leading-relaxed text-neutral-700 sm:text-[1.1rem]">
+              <div className="space-y-8 text-[0.88rem] leading-relaxed text-neutral-700 sm:space-y-10 sm:text-[1.1rem]">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Her role</p>
                   <p className="mt-1 text-[0.95rem] font-medium text-ink sm:text-[1.1rem]">Reputation guardian and visitor joy ambassador.</p>
@@ -92,18 +92,24 @@ export function ProblemSolutionSection() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="https://elara.nrture.ai/book-a-demo/"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#6ee0ff] via-[#4f9cff] to-[#527bff] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(49,130,246,0.45)] transition hover:scale-[1.02]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 px-8 py-3 text-base font-semibold text-white hover:!text-white hover:from-[#f0c7ff] hover:via-[#c880ff] hover:to-[#efb5ff] shadow-lg shadow-sky-200/60 transition-all duration-300"
                 >
-                  <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-white">
-                    <path
-                      d="M7 3v3M17 3v3M4 8h16M5 11h14v9H5v-9Z"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    className="h-5 w-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x={3} y={5} width={18} height={16} rx={2} />
+                    <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
                   </svg>
-                  Book a Demo
+                  <span>Book a Demo</span>
                 </a>
               </div>
             </div>

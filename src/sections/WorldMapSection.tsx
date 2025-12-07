@@ -66,7 +66,12 @@ export function WorldMapSection() {
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 border-t border-neutral-200 px-4 pt-3 text-center text-sm text-neutral-500 sm:px-6">
           <span className="font-display text-base text-neutral-900">nrtureAI</span>
           <p>© 2025 nrtureAI by tRetail Labs. All rights reserved.</p>
-          <a href="mailto:hello@nrture.ai" className="text-neutral-500 transition hover:text-neutral-900">
+          <a
+            href="mailto:hello@nrture.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-neutral-500 transition hover:text-neutral-900"
+          >
             hello@nrture.ai
           </a>
         </div>

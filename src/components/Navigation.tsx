@@ -69,114 +69,131 @@ export function Navigation() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-3 z-50 bg-transparent sm:top-4">
-      <div className="relative mx-auto w-full max-w-7xl px-3 py-3 sm:px-4">
+    <>
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none fixed left-1/2 -top-10 flex w-[260vw] -translate-x-1/2 items-start justify-center -z-10 sm:-top-12 sm:w-[200vw] transition-all duration-500 ${
+          isAtTop ? "opacity-80 translate-y-0" : "opacity-0 -translate-y-6"
+        }`}
+      >
         <div
-          className={`pointer-events-none absolute inset-x-0 -top-10 flex justify-center -z-10 sm:-top-12 transition-all duration-500 ${
-            isAtTop ? "opacity-80 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
-        >
-          <div
-            className="nav-aurora-halo h-[320px] w-[min(1200px,95vw)] rounded-full bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[120px] sm:h-[340px] sm:blur-[140px]"
-            style={{ transform: "translateY(10px)", opacity: 0.65 }}
-          />
-        </div>
-        <div className="relative z-10">
-          <div
-            className="flex w-full items-center justify-between gap-2 rounded-[999px] px-3 py-2 sm:gap-5 sm:px-6 sm:py-3 md:gap-6 md:px-7"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg,#aee4ff,#f0c7ff,#efb5ff,#d8a9ff,#bac1ff)",
-            }}
-          >
-            <a href="/" className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 rounded-full p-1 -m-1">
-              <img src={logo} alt="nrtureAI logo" className="h-8 w-auto sm:h-10 md:h-12" />
-            </a>
-
-            <nav className="relative hidden items-center gap-5 text-sm font-semibold text-neutral-900 xl:flex xl:flex-1 xl:justify-center">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="inline-flex items-center gap-2 rounded-full px-3 py-2 transition hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300"
-                  onClick={(event) => handleNavClick(event, link)}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-2 text-xs font-semibold text-neutral-900 sm:gap-3 sm:text-sm">
-              <button
-                type="button"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 bg-white/70 text-neutral-900 transition hover:border-neutral-500 hover:text-neutral-700 xl:hidden"
-                onClick={toggleMobileMenu}
-                aria-expanded={isMobileMenuOpen}
-                aria-controls="mobile-nav"
-              >
-                <span className="sr-only">Toggle menu</span>
-                <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M5 4h4a1 1 0 0 1 1 1v4H6a1 1 0 0 1-1-1V4Z" />
-                  <path d="M11 4h4a1 1 0 0 1 1 1v4h-4a1 1 0 0 1-1-1V4Z" />
-                  <path d="M5 11h4a1 1 0 0 1 1 1v4H6a1 1 0 0 1-1-1v-4Z" />
-                  <path d="M11 11h4a1 1 0 0 1 1 1v4h-4a1 1 0 0 1-1-1v-4Z" />
-                </svg>
-              </button>
-              <a
-                href="https://elara.nrture.ai/book-a-demo/"
-                className="hidden rounded-full border border-neutral-300 px-3 py-1.5 transition hover:border-neutral-500 hover:text-neutral-700 sm:inline-flex sm:px-4 sm:py-2"
-              >
-                Request a demo
+          className="nav-aurora-halo h-[420px] w-[240vw] max-w-none rounded-none bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[130px] sm:h-[460px] sm:blur-[150px]"
+          style={{
+            transform: "translateY(-50px)",
+            opacity: 0.85,
+            maskImage: "linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)",
+            WebkitMaskImage:
+              "linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)",
+          }}
+        />
+      </div>
+      <header className="fixed inset-x-0 top-3 z-50 bg-transparent sm:top-4">
+        <div className="relative mx-auto w-full max-w-7xl px-3 py-3 sm:px-4">
+          <div className="relative z-10">
+            <div
+              className="flex w-full items-center justify-between gap-2 rounded-[999px] px-3 py-2 sm:gap-5 sm:px-6 sm:py-3 md:gap-6 md:px-7"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg,#aee4ff,#f0c7ff,#efb5ff,#d8a9ff,#bac1ff)",
+              }}
+            >
+              <a href="/" className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200 rounded-full p-1 -m-1">
+                <img src={logo} alt="nrtureAI logo" className="h-8 w-auto sm:h-10 md:h-12" />
               </a>
-              <a
-                href="https://elara.nrture.ai/"
-                className="rounded-full bg-neutral-900 px-4 py-1.5 text-white shadow-sm transition hover:bg-neutral-700 sm:px-5 sm:py-2"
-              >
-                Login
-              </a>
-            </div>
-          </div>
-        </div>
-        {isMobileMenuOpen && (
-          <div
-            id="mobile-nav"
-            className="mt-3 h-[calc(100vh-6rem)] max-h-[calc(100vh-6rem)] overscroll-contain rounded-[32px] border border-neutral-200 bg-white px-4 py-5 text-neutral-900 xl:hidden overflow-hidden"
-          >
-            <div className="h-full space-y-5 overflow-y-auto pr-2">
-              <div className="space-y-3">
+
+              <nav className="relative hidden items-center gap-5 text-sm font-semibold text-white xl:flex xl:flex-1 xl:justify-center xl:text-base">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="flex w-full items-center justify-between rounded-2xl bg-white px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
+                    className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-white transition hover:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
                     onClick={(event) => handleNavClick(event, link)}
                   >
-                    <span>{link.label}</span>
-                    <span className="text-xs text-neutral-400">›</span>
+                    {link.label}
                   </a>
                 ))}
-              </div>
+              </nav>
 
-              <div className="mt-5 flex flex-col gap-3">
+              <div className="flex items-center gap-2 text-xs font-semibold text-neutral-900 sm:gap-3 sm:text-sm">
+                <button
+                  type="button"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 bg-white/70 text-neutral-900 transition hover:border-neutral-500 hover:text-neutral-700 xl:hidden"
+                  onClick={toggleMobileMenu}
+                  aria-expanded={isMobileMenuOpen}
+                  aria-controls="mobile-nav"
+                >
+                  <span className="sr-only">Toggle menu</span>
+                  <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M5 4h4a1 1 0 0 1 1 1v4H6a1 1 0 0 1-1-1V4Z" />
+                    <path d="M11 4h4a1 1 0 0 1 1 1v4h-4a1 1 0 0 1-1-1V4Z" />
+                    <path d="M5 11h4a1 1 0 0 1 1 1v4H6a1 1 0 0 1-1-1v-4Z" />
+                    <path d="M11 11h4a1 1 0 0 1 1 1v4h-4a1 1 0 0 1-1-1v-4Z" />
+                  </svg>
+                </button>
                 <a
                   href="https://elara.nrture.ai/book-a-demo/"
-                  className="rounded-full border border-neutral-300 px-4 py-2 text-center text-sm font-semibold text-neutral-900 transition hover:border-neutral-500 hover:text-neutral-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden rounded-full border border-sky-500 bg-white px-3 py-1.5 text-neutral-900 transition hover:border-sky-600 hover:bg-blue-50 sm:inline-flex sm:px-4 sm:py-2"
                 >
-                  Request a demo
+                  Book a demo
                 </a>
                 <a
                   href="https://elara.nrture.ai/"
-                  className="rounded-full bg-neutral-900 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-neutral-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-neutral-900 px-4 py-1.5 text-white shadow-sm transition hover:bg-neutral-700 sm:px-5 sm:py-2"
                 >
                   Login
                 </a>
               </div>
             </div>
           </div>
-        )}
-      </div>
-    </header>
+          {isMobileMenuOpen && (
+            <div
+              id="mobile-nav"
+              className="mt-3 h-[calc(100vh-6rem)] max-h-[calc(100vh-6rem)] overscroll-contain rounded-[32px] border border-neutral-200 bg-white px-4 py-5 text-neutral-900 xl:hidden overflow-hidden"
+            >
+              <div className="h-full space-y-5 overflow-y-auto pr-2">
+                <div className="space-y-3">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="flex w-full items-center justify-between rounded-2xl bg-white px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-50"
+                      onClick={(event) => handleNavClick(event, link)}
+                    >
+                      <span>{link.label}</span>
+                      <span className="text-xs text-neutral-400">›</span>
+                    </a>
+                  ))}
+                </div>
+
+                <div className="mt-5 flex flex-col gap-3">
+                  <a
+                    href="https://elara.nrture.ai/book-a-demo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-neutral-300 bg-white px-4 py-2 text-center text-sm font-semibold text-neutral-900 transition hover:border-neutral-500 hover:bg-neutral-100"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Request a demo
+                  </a>
+                  <a
+                    href="https://elara.nrture.ai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-neutral-900 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-neutral-700"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Login
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+    </>
   );
 }
