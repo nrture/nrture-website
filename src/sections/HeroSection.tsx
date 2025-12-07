@@ -41,7 +41,7 @@ export function HeroSection() {
                 "linear-gradient(92deg,var(--color-1) 0%, var(--color-2) 48%, var(--color-5) 100%)",
             }}
           >
-            One visitor intelligence view for your entire destination and every operator within it.
+            The Visitor Experience Intelligence Layer
           </h1>
           <p className="max-w-3xl text-lg text-neutral-700 sm:text-xl md:text-2xl">
             nrtureAI unifies real visitor voice and reputation signals across destinations and operators in a single clear
