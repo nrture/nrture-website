@@ -21,7 +21,7 @@ export function HeroSection() {
             <div className="h-72 w-[min(1100px,95vw)] bg-gradient-to-r from-violet-200/60 via-pink-200/60 to-sky-200/60 blur-3xl" />
           </div>
         </div>
-        <div className="hero-content mx-auto flex w-full max-w-5xl flex-col items-center gap-6 px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-12 sm:pb-16 md:gap-8 md:pt-16">
+        <div className="hero-content mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-12 sm:pb-16 md:gap-8 md:pt-16">
           <div className="relative z-20 flex flex-col items-center gap-3 text-xs font-semibold uppercase tracking-wide text-neutral-600 sm:flex-row sm:gap-4">
             <div className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]">
               <span className="inline-flex items-center gap-2">
@@ -35,17 +35,20 @@ export function HeroSection() {
             </div>
           </div>
           <h1
-            className="bg-clip-text text-[clamp(2.2rem,7.68vw,4.32rem)] font-display font-semibold leading-tight tracking-tight text-transparent -mt-3 sm:-mt-4"
+            className="bg-clip-text text-[clamp(1.7rem,7.7vw,8.15rem)] font-display font-semibold leading-tight tracking-tight text-transparent -mt-3 sm:-mt-4"
             style={{
               backgroundImage:
                 "linear-gradient(92deg,var(--color-1) 0%, var(--color-2) 48%, var(--color-5) 100%)",
             }}
           >
-            The Visitor Experience Intelligence Layer
+            <span className="block whitespace-nowrap">The Visitor Experience</span>
+            <span className="block whitespace-nowrap">Intelligence Layer</span>
           </h1>
           <p className="max-w-3xl text-lg text-neutral-700 sm:text-xl md:text-2xl">
-            nrtureAI unifies real visitor voice and reputation signals across destinations and operators in a single clear
-            view.
+            <strong>
+              nrtureAI unifies real visitor voice and reputation signals across destinations and operators in a single clear
+              view.
+            </strong>
           </p>
           <div className="mt-6 flex w-full justify-center">
             <a
