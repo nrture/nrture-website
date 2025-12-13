@@ -41,8 +41,14 @@ export function HeroSection() {
                 "linear-gradient(92deg,var(--color-1) 0%, var(--color-2) 48%, var(--color-5) 100%)",
             }}
           >
-            <span className="block whitespace-nowrap">The Visitor Experience</span>
-            <span className="block whitespace-nowrap">Intelligence Layer</span>
+            <a
+              href="#product"
+              className="contents text-transparent decoration-none hover:text-transparent focus-visible:text-transparent"
+              aria-label="Jump to the product section"
+            >
+              <span className="block whitespace-nowrap">The Visitor Experience</span>
+              <span className="block whitespace-nowrap">Intelligence Layer</span>
+            </a>
           </h1>
           <p className="max-w-3xl text-lg text-neutral-700 sm:text-xl md:text-2xl">
             <strong>
