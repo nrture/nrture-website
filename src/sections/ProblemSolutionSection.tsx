@@ -1,3 +1,4 @@
+import { BgAnimateButton } from "@/components/ui/bg-animate-button";
 import { Iphone15Pro } from "../components/Iphone15Pro";
 
 const featureCards = [
@@ -94,27 +95,33 @@ export function ProblemSolutionSection() {
                 </ul>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <a
+                <BgAnimateButton
                   href="https://elara.nrture.ai/book-a-demo/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 px-8 py-3 text-base font-semibold text-white hover:!text-white hover:from-[#f0c7ff] hover:via-[#c880ff] hover:to-[#efb5ff] shadow-lg shadow-sky-200/60 transition-all duration-300"
+                  gradient="navbar"
+                  animation="spin-slow"
+                  size="lg"
+                  rounded="2xl"
+                  shadow="flat"
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    className="h-5 w-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x={3} y={5} width={18} height={16} rx={2} />
-                    <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
-                  </svg>
-                  <span>Book a Demo</span>
-                </a>
+                  <span className="inline-flex items-center gap-2 font-semibold text-white">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      className="h-5 w-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x={3} y={5} width={18} height={16} rx={2} />
+                      <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
+                    </svg>
+                    <span>Book a Demo</span>
+                  </span>
+                </BgAnimateButton>
               </div>
             </div>
             <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-2 xl:w-[64%] xl:-ml-12 2xl:-ml-16 2xl:w-[70%] meet-elara-phone-column">
