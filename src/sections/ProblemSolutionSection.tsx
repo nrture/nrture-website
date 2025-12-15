@@ -59,16 +59,20 @@ export function ProblemSolutionSection() {
   return (
     <section
       id="meet-elara"
-      className="bg-white mt-0 pt-0 pb-10 scroll-mt-28 sm:-mt-4 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-6 md:pt-2 md:pb-14 md:scroll-mt-36 lg:-mt-8 lg:scroll-mt-40"
+      className="meet-elara-section mt-0 pt-0 pb-10 scroll-mt-28 sm:-mt-4 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-6 md:pt-2 md:pb-14 md:scroll-mt-36 lg:-mt-8 lg:scroll-mt-40"
     >
-      <div className="mx-auto w-full max-w-[60rem] px-0 sm:px-6 lg:max-w-none lg:px-0">
-        <div className="rounded-none bg-gradient-to-r from-[#f4f0ff] via-[#fdf5ff] to-[#e0f3ff] px-4 py-8 shadow-[0_28px_70px_rgba(15,23,42,0.1)] sm:rounded-[32px] sm:px-8 sm:py-10 lg:rounded-[44px] lg:px-20 lg:py-12 xl:px-28 xl:py-14">
-          <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-6">
-            <div className="w-full space-y-5 text-left xl:w-4/12 xl:pt-20">
+      <div className="mx-auto w-full max-w-[60rem] px-0 sm:px-6 lg:max-w-[1100px] lg:px-0 2xl:max-w-[1150px] meet-elara-panel">
+        <div className="meet-elara-content px-4 py-8 sm:px-8 sm:py-10 lg:px-20 lg:py-12 xl:px-28 xl:py-14">
+          <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-2 2xl:gap-1 meet-elara-columns">
+            <div className="w-full space-y-5 text-left xl:w-[55%] xl:max-w-[840px] xl:pt-20 xl:pr-2 xl:ml-[2.5rem] 2xl:w-[50%] 2xl:ml-[3.5rem] meet-elara-text-column">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-sky-600 sm:text-sm">Meet Elara</p>
                 <h2 className="mt-2 text-[clamp(2rem,4.5vw,3.25rem)] font-display font-semibold leading-tight text-[#6c43ff]">
-                  Your 24/7 AI Social Reputation Manager
+                  <span className="block">
+                    Your{" "}
+                    <span className="whitespace-nowrap">24/7 AI Social</span>
+                  </span>
+                  <span className="block">Reputation Manager</span>
                 </h2>
               </div>
               <div className="space-y-8 text-[0.88rem] leading-relaxed text-neutral-700 sm:space-y-10 sm:text-[1.1rem]">
@@ -113,14 +117,14 @@ export function ProblemSolutionSection() {
                 </a>
               </div>
             </div>
-            <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-2 xl:w-7/12">
+            <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-2 xl:w-[64%] xl:-ml-12 2xl:-ml-16 2xl:w-[70%] meet-elara-phone-column">
               <div className="flex w-full justify-center xl:w-auto xl:flex-none xl:justify-center xl:self-stretch">
-                <div className="relative mt-6 flex w-full items-center justify-center sm:mt-8 xl:-mt-6">
-                  <div className="absolute inset-x-4 top-8 h-10 rounded-full bg-gradient-to-r from-[#69d5ff] via-[#7ea8ff] to-[#f5a8ff] opacity-40 blur-3xl" />
-                  <Iphone15Pro
-                    className="relative z-[1] w-full max-w-[320px] drop-shadow-[0_18px_40px_rgba(70,115,246,0.35)] sm:max-w-[340px] xl:max-w-[300px]"
-                    aria-label="Elara, your AI Social Reputation Manager"
-                  />
+                <div className="relative mt-6 flex w-full items-center justify-center sm:mt-8 xl:-mt-4">
+                <div className="absolute inset-x-4 top-8 h-10 rounded-full bg-gradient-to-r from-[#69d5ff] via-[#7ea8ff] to-[#f5a8ff] opacity-40 blur-3xl" />
+                <Iphone15Pro
+                  className="relative z-[1] w-full max-w-[300px] drop-shadow-[0_18px_40px_rgba(70,115,246,0.35)] sm:max-w-[320px] xl:max-w-[280px] 2xl:max-w-[260px]"
+                  aria-label="Elara, your AI Social Reputation Manager"
+                />
                   <div className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center xl:hidden">
                     <div className="relative h-full w-full max-w-[300px]">
                       {[
