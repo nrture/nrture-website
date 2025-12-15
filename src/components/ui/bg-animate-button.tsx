@@ -1,5 +1,5 @@
 import * as React from "react"
-import { cva } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
@@ -9,6 +9,7 @@ const outerDivVariants = cva("relative inline-block overflow-hidden ", {
       sm: "",
       default: "",
       lg: "",
+      nav: "",
     },
     rounded: {
       full: "rounded-full before:rounded-full",
@@ -112,75 +113,98 @@ const buttonVariants = cva(
       size: "default",
       shadow: "base",
       rounded: "xl",
+      gradient: "default",
     },
   }
 )
 
-export interface UnifiedButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  size?: "sm" | "lg" | "default" | "nav"
-  shadow?: "flat" | "soft" | "base" | "deep" | "deeper"
-  rounded?: "full" | "xl" | "2xl" | "3xl" | "sm" | "xs" | "base"
-  href?: string
-  animation?: "spin" | "pulse" | "spin-slow" | "spin-fast"
-  gradient?:
-    | "sunrise"
-    | "ocean"
-    | "candy"
-    | "default"
-    | "forest"
-    | "sunset"
-    | "nebula"
-    | "navbar"
+type ButtonVariantProps = VariantProps<typeof buttonVariants>
+type InnerVariantProps = VariantProps<typeof innerSpanVariants>
+
+type SharedButtonProps = {
+  size?: ButtonVariantProps["size"]
+  shadow?: ButtonVariantProps["shadow"]
+  rounded?: ButtonVariantProps["rounded"]
+  gradient?: ButtonVariantProps["gradient"]
+  animation?: InnerVariantProps["animation"]
 }
+
+type AnchorProps = SharedButtonProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string
+  }
+
+type ButtonProps = SharedButtonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: undefined
+  }
+
+export type UnifiedButtonProps = AnchorProps | ButtonProps
 
 const BgAnimateButton = React.forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   UnifiedButtonProps
->(
-  (
-    {
-      size = "default",
-      rounded = "full",
-      shadow = "soft",
-      gradient = null,
-      animation = null,
-      className,
-      href,
-      target,
-      rel,
-      type,
-      children,
-      ...props
-    },
-    ref
-  ) => {
-    const Component = href ? "a" : "button"
+>((props, ref) => {
+  const {
+    size = "default",
+    rounded = "full",
+    shadow = "soft",
+    gradient,
+    animation,
+    className,
+    href,
+    children,
+    ...restProps
+  } = props
 
-    const componentProps = href
-      ? { href, target, rel, ...props }
-      : { type: type ?? "button", ...props }
+  const wrapperClasses = cn(outerDivVariants({ size, rounded }), className)
+  const gradientLayer =
+    gradient && (
+      <span className={cn(innerSpanVariants({ gradient, animation }))} />
+    )
+  const buttonContent = (
+    <>
+      {gradientLayer}
+      <div className={cn(buttonVariants({ shadow, rounded, size, gradient }))}>
+        {children || "Button"}
+      </div>
+    </>
+  )
+
+  if (href) {
+    const { target, rel, ...anchorProps } = restProps as Omit<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      "href"
+    >
 
     return (
-      <Component
-        className={cn(outerDivVariants({ size, rounded }), className)}
-        ref={ref as React.Ref<HTMLButtonElement | HTMLAnchorElement>}
-        {...componentProps}
+      <a
+        className={wrapperClasses}
+        ref={ref as React.ForwardedRef<HTMLAnchorElement>}
+        href={href}
+        target={target}
+        rel={rel}
+        {...anchorProps}
       >
-        {gradient && (
-          <span className={cn(innerSpanVariants({ gradient, animation }))} />
-        )}
-
-        <div
-          className={cn(buttonVariants({ shadow, rounded, size, gradient }))}
-        >
-          {children || "Button"}
-        </div>
-      </Component>
+        {buttonContent}
+      </a>
     )
   }
-)
+
+  const { type: buttonType, ...buttonProps } =
+    restProps as React.ButtonHTMLAttributes<HTMLButtonElement>
+
+  return (
+    <button
+      className={wrapperClasses}
+      ref={ref as React.ForwardedRef<HTMLButtonElement>}
+      type={buttonType ?? "button"}
+      {...buttonProps}
+    >
+      {buttonContent}
+    </button>
+  )
+})
 
 BgAnimateButton.displayName = "BgAnimateButton"
 
