@@ -61,10 +61,10 @@ export function ProblemSolutionSection() {
       id="meet-elara"
       className="bg-white mt-0 pt-0 pb-10 scroll-mt-28 sm:-mt-4 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-6 md:pt-2 md:pb-14 md:scroll-mt-36 lg:-mt-8 lg:scroll-mt-40"
     >
-      <div className="mx-auto w-full max-w-6xl px-0 sm:px-6 lg:max-w-none lg:px-0">
+      <div className="mx-auto w-full max-w-[60rem] px-0 sm:px-6 lg:max-w-none lg:px-0">
         <div className="rounded-none bg-gradient-to-r from-[#f4f0ff] via-[#fdf5ff] to-[#e0f3ff] px-4 py-8 shadow-[0_28px_70px_rgba(15,23,42,0.1)] sm:rounded-[32px] sm:px-8 sm:py-10 lg:rounded-[44px] lg:px-20 lg:py-12 xl:px-28 xl:py-14">
-          <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-center xl:gap-24">
-            <div className="w-full space-y-5 text-left xl:w-1/2">
+          <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-6">
+            <div className="w-full space-y-5 text-left xl:w-4/12 xl:pt-20">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-sky-600 sm:text-sm">Meet Elara</p>
                 <h2 className="mt-2 text-[clamp(2rem,4.5vw,3.25rem)] font-display font-semibold leading-tight text-[#6c43ff]">
@@ -113,7 +113,7 @@ export function ProblemSolutionSection() {
                 </a>
               </div>
             </div>
-            <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-6 xl:w-1/2">
+            <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-2 xl:w-7/12">
               <div className="flex w-full justify-center xl:w-auto xl:flex-none xl:justify-center xl:self-stretch">
                 <div className="relative mt-6 flex w-full items-center justify-center sm:mt-8 xl:-mt-6">
                   <div className="absolute inset-x-4 top-8 h-10 rounded-full bg-gradient-to-r from-[#69d5ff] via-[#7ea8ff] to-[#f5a8ff] opacity-40 blur-3xl" />
@@ -141,7 +141,7 @@ export function ProblemSolutionSection() {
                   </div>
                 </div>
               </div>
-              <div className="hidden w-full flex-col gap-6 xl:flex xl:w-auto xl:flex-none xl:justify-center xl:self-stretch xl:max-w-[18rem] xl:mx-auto 2xl:max-w-[20rem]">
+              <div className="hidden w-full flex-col gap-6 xl:flex xl:w-auto xl:flex-none xl:justify-center xl:self-stretch xl:max-w-[16rem] 2xl:max-w-[18rem]">
                 {featureCards.map((card) => (
                   <div key={card.title} className="relative">
                     <span

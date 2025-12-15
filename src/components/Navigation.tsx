@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import logo from "../assets/logo.png";
+import { BgAnimateButton } from "@/components/ui/bg-animate-button";
 
 type NavLink = {
   label: string;
@@ -15,7 +16,11 @@ const navLinks: NavLink[] = [
   { label: "FAQ", href: "#faq", offset: -0.1 },
 ];
 
-export function Navigation() {
+export type NavigationProps = {
+  showHalo?: boolean;
+};
+
+export function Navigation({ showHalo = true }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
 
@@ -70,23 +75,25 @@ export function Navigation() {
 
   return (
     <>
-      <div
-        aria-hidden="true"
-        className={`pointer-events-none fixed left-1/2 -top-10 flex w-[260vw] -translate-x-1/2 items-start justify-center -z-10 sm:-top-12 sm:w-[200vw] transition-all duration-500 ${
-          isAtTop ? "opacity-80 translate-y-0" : "opacity-0 -translate-y-6"
-        }`}
-      >
+      {showHalo && (
         <div
-          className="nav-aurora-halo h-[420px] w-[240vw] max-w-none rounded-none bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[130px] sm:h-[460px] sm:blur-[150px]"
-          style={{
-            transform: "translateY(-50px)",
-            opacity: 0.85,
-            maskImage: "linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)",
-            WebkitMaskImage:
-              "linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)",
-          }}
-        />
-      </div>
+          aria-hidden="true"
+          className={`pointer-events-none fixed left-1/2 -top-10 flex w-[260vw] -translate-x-1/2 items-start justify-center -z-10 sm:-top-12 sm:w-[200vw] transition-all duration-500 ${
+            isAtTop ? "opacity-80 translate-y-0" : "opacity-0 -translate-y-6"
+          }`}
+        >
+          <div
+            className="nav-aurora-halo h-[420px] w-[240vw] max-w-none rounded-none bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[130px] sm:h-[460px] sm:blur-[150px]"
+            style={{
+              transform: "translateY(-50px)",
+              opacity: 0.85,
+              maskImage: "linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)",
+              WebkitMaskImage:
+                "linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)",
+            }}
+          />
+        </div>
+      )}
       <header className="fixed inset-x-0 top-3 z-50 bg-transparent sm:top-4">
         <div className="relative mx-auto w-full max-w-7xl px-3 py-3 sm:px-4">
           <div className="relative z-10">
@@ -130,14 +137,19 @@ export function Navigation() {
                     <path d="M11 11h4a1 1 0 0 1 1 1v4h-4a1 1 0 0 1-1-1v-4Z" />
                   </svg>
                 </button>
-                <a
+                <BgAnimateButton
                   href="https://elara.nrture.ai/book-a-demo/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden rounded-full border border-sky-500 bg-white px-3 py-1.5 text-neutral-900 transition hover:border-sky-600 hover:bg-blue-50 sm:inline-flex sm:px-4 sm:py-2"
+                  gradient="navbar"
+                  animation="spin-slow"
+                  shadow="flat"
+                  size="nav"
+                  rounded="full"
+                  className="hidden sm:inline-flex"
                 >
                   Book a demo
-                </a>
+                </BgAnimateButton>
                 <a
                   href="https://elara.nrture.ai/"
                   target="_blank"
