@@ -94,7 +94,7 @@ export function ProblemSolutionSection() {
                   <li>• Always by your side</li>
                 </ul>
               </div>
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center">
                 <BgAnimateButton
                   href="https://elara.nrture.ai/book-a-demo/"
                   target="_blank"
