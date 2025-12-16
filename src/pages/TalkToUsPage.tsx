@@ -5,8 +5,8 @@ import { Footer } from "../components/Footer";
 export function TalkToUsPage() {
   return (
     <div className="min-h-screen bg-white text-ink">
-      <Navigation />
-      <main className="mx-auto mt-[25vh] flex w-full max-w-6xl flex-col gap-10 px-6 pb-16 lg:flex-row lg:items-start lg:gap-12">
+      <Navigation showHalo={false} />
+      <main className="mx-auto mt-[24vh] sm:mt-[22vh] md:mt-[20vh] lg:mt-[18vh] xl:mt-[18vh] 2xl:mt-[15vh] flex w-full max-w-6xl flex-col gap-10 px-6 pb-16 lg:flex-row lg:items-start lg:gap-12">
         <div className="flex-1 space-y-6">
           <h1 className="text-3xl font-display font-semibold leading-tight text-ink sm:text-[2.5rem]">
             See how nrtureAI protects every visitor moment

@@ -1,3 +1,4 @@
+import { BgAnimateButton } from "@/components/ui/bg-animate-button";
 import { Iphone15Pro } from "../components/Iphone15Pro";
 
 const featureCards = [
@@ -59,16 +60,20 @@ export function ProblemSolutionSection() {
   return (
     <section
       id="meet-elara"
-      className="bg-white mt-0 pt-0 pb-10 scroll-mt-28 sm:-mt-4 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-6 md:pt-2 md:pb-14 md:scroll-mt-36 lg:-mt-8 lg:scroll-mt-40"
+      className="meet-elara-section mt-0 pt-0 pb-10 scroll-mt-28 sm:-mt-4 sm:pt-0 sm:pb-12 sm:scroll-mt-32 md:-mt-6 md:pt-2 md:pb-14 md:scroll-mt-36 lg:-mt-8 lg:scroll-mt-40"
     >
-      <div className="mx-auto w-full max-w-6xl px-0 sm:px-6 lg:max-w-none lg:px-0">
-        <div className="rounded-none bg-gradient-to-r from-[#f4f0ff] via-[#fdf5ff] to-[#e0f3ff] px-4 py-8 shadow-[0_28px_70px_rgba(15,23,42,0.1)] sm:rounded-[32px] sm:px-8 sm:py-10 lg:rounded-[44px] lg:px-20 lg:py-12 xl:px-28 xl:py-14">
-          <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-center xl:gap-24">
-            <div className="w-full space-y-5 text-left xl:w-1/2">
+      <div className="mx-auto w-full max-w-[60rem] px-0 sm:px-6 lg:max-w-[1100px] lg:px-0 2xl:max-w-[1150px] meet-elara-panel">
+        <div className="meet-elara-content px-4 py-8 sm:px-8 sm:py-10 lg:px-20 lg:py-12 xl:px-28 xl:py-14">
+          <div className="flex flex-col items-start gap-8 xl:flex-row xl:items-start xl:gap-2 2xl:gap-1 meet-elara-columns">
+            <div className="w-full space-y-5 text-left xl:w-[55%] xl:max-w-[840px] xl:pt-20 xl:pr-2 xl:ml-[2.5rem] 2xl:w-[50%] 2xl:ml-[3.5rem] meet-elara-text-column">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-sky-600 sm:text-sm">Meet Elara</p>
                 <h2 className="mt-2 text-[clamp(2rem,4.5vw,3.25rem)] font-display font-semibold leading-tight text-[#6c43ff]">
-                  Your 24/7 AI Social Reputation Manager
+                  <span className="block">
+                    Your{" "}
+                    <span className="whitespace-nowrap">24/7 AI Social</span>
+                  </span>
+                  <span className="block">Reputation Manager</span>
                 </h2>
               </div>
               <div className="space-y-8 text-[0.88rem] leading-relaxed text-neutral-700 sm:space-y-10 sm:text-[1.1rem]">
@@ -89,38 +94,44 @@ export function ProblemSolutionSection() {
                   <li>• Always by your side</li>
                 </ul>
               </div>
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <a
+              <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center">
+                <BgAnimateButton
                   href="https://elara.nrture.ai/book-a-demo/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 px-8 py-3 text-base font-semibold text-white hover:!text-white hover:from-[#f0c7ff] hover:via-[#c880ff] hover:to-[#efb5ff] shadow-lg shadow-sky-200/60 transition-all duration-300"
+                  gradient="navbar"
+                  animation="spin-slow"
+                  size="lg"
+                  rounded="2xl"
+                  shadow="flat"
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    className="h-5 w-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x={3} y={5} width={18} height={16} rx={2} />
-                    <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
-                  </svg>
-                  <span>Book a Demo</span>
-                </a>
+                  <span className="inline-flex items-center gap-2 font-semibold text-white">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      className="h-5 w-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x={3} y={5} width={18} height={16} rx={2} />
+                      <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
+                    </svg>
+                    <span>Book a Demo</span>
+                  </span>
+                </BgAnimateButton>
               </div>
             </div>
-            <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-6 xl:w-1/2">
+            <div className="flex w-full flex-col gap-6 xl:-mt-6 xl:flex-row xl:items-start xl:justify-center xl:gap-2 xl:w-[64%] xl:-ml-12 2xl:-ml-16 2xl:w-[70%] meet-elara-phone-column">
               <div className="flex w-full justify-center xl:w-auto xl:flex-none xl:justify-center xl:self-stretch">
-                <div className="relative mt-6 flex w-full items-center justify-center sm:mt-8 xl:-mt-6">
-                  <div className="absolute inset-x-4 top-8 h-10 rounded-full bg-gradient-to-r from-[#69d5ff] via-[#7ea8ff] to-[#f5a8ff] opacity-40 blur-3xl" />
-                  <Iphone15Pro
-                    className="relative z-[1] w-full max-w-[320px] drop-shadow-[0_18px_40px_rgba(70,115,246,0.35)] sm:max-w-[340px] xl:max-w-[300px]"
-                    aria-label="Elara, your AI Social Reputation Manager"
-                  />
+                <div className="relative mt-6 flex w-full items-center justify-center sm:mt-8 xl:-mt-4">
+                <div className="absolute inset-x-4 top-8 h-10 rounded-full bg-gradient-to-r from-[#69d5ff] via-[#7ea8ff] to-[#f5a8ff] opacity-40 blur-3xl" />
+                <Iphone15Pro
+                  className="relative z-[1] w-full max-w-[300px] drop-shadow-[0_18px_40px_rgba(70,115,246,0.35)] sm:max-w-[320px] xl:max-w-[280px] 2xl:max-w-[260px]"
+                  aria-label="Elara, your AI Social Reputation Manager"
+                />
                   <div className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center xl:hidden">
                     <div className="relative h-full w-full max-w-[300px]">
                       {[
@@ -141,7 +152,7 @@ export function ProblemSolutionSection() {
                   </div>
                 </div>
               </div>
-              <div className="hidden w-full flex-col gap-6 xl:flex xl:w-auto xl:flex-none xl:justify-center xl:self-stretch xl:max-w-[18rem] xl:mx-auto 2xl:max-w-[20rem]">
+              <div className="hidden w-full flex-col gap-6 xl:flex xl:w-auto xl:flex-none xl:justify-center xl:self-stretch xl:max-w-[16rem] 2xl:max-w-[18rem]">
                 {featureCards.map((card) => (
                   <div key={card.title} className="relative">
                     <span

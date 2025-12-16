@@ -1,20 +1,75 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { Navigation } from "./components/Navigation";
 import { HeroSection } from "./sections/HeroSection";
-import { ProblemSolutionSection } from "./sections/ProblemSolutionSection";
-import { MeetElaraSection } from "./sections/MeetElaraSection";
-import { SolutionsSection } from "./sections/SolutionsSection";
-import { PricingSection } from "./sections/PricingSection";
-import { FAQSection } from "./sections/FAQSection";
-import { ClosingCTASection } from "./sections/ClosingCTASection";
-import { Footer } from "./components/Footer";
-import { TalkToUsPage } from "./pages/TalkToUsPage";
-import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
+
+const LazyProblemSolutionSection = lazy(
+  () =>
+    import("./sections/ProblemSolutionSection").then((module) => ({
+      default: module.ProblemSolutionSection,
+    })),
+);
+
+const LazyMeetElaraSection = lazy(
+  () =>
+    import("./sections/MeetElaraSection").then((module) => ({
+      default: module.MeetElaraSection,
+    })),
+);
+
+const LazySolutionsSection = lazy(
+  () =>
+    import("./sections/SolutionsSection").then((module) => ({
+      default: module.SolutionsSection,
+    })),
+);
+
+const LazyPricingSection = lazy(
+  () =>
+    import("./sections/PricingSection").then((module) => ({
+      default: module.PricingSection,
+    })),
+);
+
+const LazyFAQSection = lazy(
+  () =>
+    import("./sections/FAQSection").then((module) => ({
+      default: module.FAQSection,
+    })),
+);
+
+const LazyClosingCTASection = lazy(
+  () =>
+    import("./sections/ClosingCTASection").then((module) => ({
+      default: module.ClosingCTASection,
+    })),
+);
+
+const LazyFooter = lazy(
+  () =>
+    import("./components/Footer").then((module) => ({
+      default: module.Footer,
+    })),
+);
+
+const LazyTalkToUsPage = lazy(
+  () =>
+    import("./pages/TalkToUsPage").then((module) => ({
+      default: module.TalkToUsPage,
+    })),
+);
+
+const LazyPrivacyPolicyPage = lazy(
+  () =>
+    import("./pages/PrivacyPolicyPage").then((module) => ({
+      default: module.PrivacyPolicyPage,
+    })),
+);
 
 function App() {
   const [path, setPath] = useState(
     typeof window !== "undefined" ? window.location.pathname : "/",
   );
+  const [showBelowFold, setShowBelowFold] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -23,12 +78,45 @@ function App() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const anyWindow = window as typeof window & {
+      requestIdleCallback?: (cb: () => void) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+
+    if (anyWindow.requestIdleCallback) {
+      const idleId = anyWindow.requestIdleCallback(() => {
+        setShowBelowFold(true);
+      });
+      return () => {
+        if (anyWindow.cancelIdleCallback) {
+          anyWindow.cancelIdleCallback(idleId);
+        }
+      };
+    }
+
+    const timeoutId = setTimeout(() => {
+      setShowBelowFold(true);
+    }, 1200);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   if (path.startsWith("/talktous")) {
-    return <TalkToUsPage />;
+    return (
+      <Suspense fallback={null}>
+        <LazyTalkToUsPage />
+      </Suspense>
+    );
   }
 
   if (path.startsWith("/privacy-policy")) {
-    return <PrivacyPolicyPage />;
+    return (
+      <Suspense fallback={null}>
+        <LazyPrivacyPolicyPage />
+      </Suspense>
+    );
   }
 
   return (
@@ -37,14 +125,22 @@ function App() {
         <Navigation />
         <main className="w-full overflow-x-hidden">
           <HeroSection />
-          <ProblemSolutionSection />
-          <MeetElaraSection />
-          <SolutionsSection />
-          <PricingSection />
-          <FAQSection />
-          <ClosingCTASection />
+          {showBelowFold && (
+            <Suspense fallback={null}>
+              <LazyProblemSolutionSection />
+              <LazyMeetElaraSection />
+              <LazySolutionsSection />
+              <LazyPricingSection />
+              <LazyFAQSection />
+              <LazyClosingCTASection />
+            </Suspense>
+          )}
         </main>
-        <Footer />
+        {showBelowFold && (
+          <Suspense fallback={null}>
+            <LazyFooter />
+          </Suspense>
+        )}
       </div>
     </div>
   );

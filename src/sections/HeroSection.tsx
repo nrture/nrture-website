@@ -1,3 +1,5 @@
+import { BgAnimateButton } from "@/components/ui/bg-animate-button";
+
 const GAP_STATS = [
   {
     value: "93%",
@@ -21,7 +23,7 @@ export function HeroSection() {
             <div className="h-72 w-[min(1100px,95vw)] bg-gradient-to-r from-violet-200/60 via-pink-200/60 to-sky-200/60 blur-3xl" />
           </div>
         </div>
-        <div className="hero-content mx-auto flex w-full max-w-5xl flex-col items-center gap-6 px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-12 sm:pb-16 md:gap-8 md:pt-16">
+        <div className="hero-content mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-12 sm:pb-16 md:gap-8 md:pt-16">
           <div className="relative z-20 flex flex-col items-center gap-3 text-xs font-semibold uppercase tracking-wide text-neutral-600 sm:flex-row sm:gap-4">
             <div className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]">
               <span className="inline-flex items-center gap-2">
@@ -35,41 +37,55 @@ export function HeroSection() {
             </div>
           </div>
           <h1
-            className="bg-clip-text text-[clamp(2.75rem,9.6vw,5.4rem)] font-display font-semibold leading-tight tracking-tight text-transparent -mt-3 sm:-mt-4"
+            className="bg-clip-text text-[clamp(1.7rem,7.7vw,8.15rem)] font-display font-semibold leading-tight tracking-tight text-transparent -mt-3 sm:-mt-4"
             style={{
               backgroundImage:
                 "linear-gradient(92deg,var(--color-1) 0%, var(--color-2) 48%, var(--color-5) 100%)",
             }}
           >
-            The visitor intelligence layer that did not exist…{" "}
-            <em className="italic">till now</em>.
+            <a
+              href="#product"
+              className="contents text-transparent decoration-none hover:text-transparent focus-visible:text-transparent"
+              aria-label="Jump to the product section"
+            >
+              <span className="block whitespace-nowrap">The Visitor Experience</span>
+              <span className="block whitespace-nowrap">Intelligence Layer</span>
+            </a>
           </h1>
           <p className="max-w-3xl text-lg text-neutral-700 sm:text-xl md:text-2xl">
-            nrtureAI connects emotion, intent and conversion triggers into clear actions so your team knows exactly what
-            drives outcomes today.
+            <strong>
+              nrtureAI unifies real visitor voice and reputation signals across destinations and operators in a single clear
+              view.
+            </strong>
           </p>
           <div className="mt-6 flex w-full justify-center">
-            <a
+            <BgAnimateButton
               href="https://elara.nrture.ai/book-a-demo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 px-8 py-3 text-base font-semibold text-white hover:!text-white hover:from-[#f0c7ff] hover:via-[#c880ff] hover:to-[#efb5ff] shadow-lg shadow-sky-200/60 transition-all duration-300"
+              gradient="navbar"
+              animation="spin-slow"
+              size="lg"
+              rounded="2xl"
+              shadow="flat"
             >
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                className="h-5 w-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x={3} y={5} width={18} height={16} rx={2} />
-                <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
-              </svg>
-              <span>Book a Demo</span>
-            </a>
+              <span className="inline-flex items-center gap-2">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  className="h-5 w-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x={3} y={5} width={18} height={16} rx={2} />
+                  <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
+                </svg>
+                <span>Book a Demo</span>
+              </span>
+            </BgAnimateButton>
           </div>
         </div>
       </section>

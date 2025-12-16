@@ -1,3 +1,5 @@
+import { BgAnimateButton } from "@/components/ui/bg-animate-button";
+
 export function ClosingCTASection() {
   return (
     <section className="bg-white py-16 sm:py-20">
@@ -9,27 +11,33 @@ export function ClosingCTASection() {
           nrtureAI™ helps visitors choose you.
         </p>
         <div className="mt-9 flex justify-center">
-          <a
+          <BgAnimateButton
             href="https://elara.nrture.ai/book-a-demo/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500 px-8 py-3 text-base font-semibold text-white hover:!text-white hover:from-[#f0c7ff] hover:via-[#c880ff] hover:to-[#efb5ff] shadow-lg shadow-sky-200/60 transition-all duration-300"
+            gradient="navbar"
+            animation="spin-slow"
+            shadow="flat"
+            size="lg"
+            rounded="2xl"
           >
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              className="h-5 w-5 text-white"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={1.5}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x={3} y={5} width={18} height={16} rx={2} />
-              <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
-            </svg>
-            <span>Book a Demo</span>
-          </a>
+            <span className="inline-flex items-center gap-2">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className="h-5 w-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x={3} y={5} width={18} height={16} rx={2} />
+                <path d="M16 3v4M8 3v4M3 11h18M8 15h2m4 0h2M8 19h2m4 0h2" />
+              </svg>
+              <span>Book a Demo</span>
+            </span>
+          </BgAnimateButton>
         </div>
       </div>
     </section>

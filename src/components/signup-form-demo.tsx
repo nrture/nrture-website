@@ -91,29 +91,6 @@ export default function SignupFormDemo({ className }: SignupFormDemoProps) {
           <Input id="email" name="work_email" placeholder="you@company.com" type="email" required />
         </LabelInputContainer>
         <LabelInputContainer>
-          <Label htmlFor="company">Company / Venue</Label>
-          <Input id="company" name="company_name" placeholder="Harbour Lounge" type="text" required />
-        </LabelInputContainer>
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <LabelInputContainer className="flex-1">
-            <Label htmlFor="phone">Phone number (optional)</Label>
-            <Input id="phone" name="phone_number" placeholder="+1 415 555 0102" type="tel" />
-          </LabelInputContainer>
-          <LabelInputContainer className="flex-1">
-            <Label htmlFor="timeline">Timeline</Label>
-            <select
-              id="timeline"
-              name="timeline"
-              className="h-10 w-full rounded-lg border border-neutral-200 bg-white px-3 text-sm text-neutral-800 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
-            >
-              <option value="Immediately">Immediately</option>
-              <option value="Within 30 days">Within 30 days</option>
-              <option value="This quarter">This quarter</option>
-              <option value="Just exploring">Just exploring</option>
-            </select>
-          </LabelInputContainer>
-        </div>
-        <LabelInputContainer>
           <Label htmlFor="message">Tell us about your guest experience goals</Label>
           <textarea
             id="message"

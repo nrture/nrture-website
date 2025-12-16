@@ -11,6 +11,55 @@
   --color-5: #5008FF;
 }
 
+@media (min-width: 1200px) {
+  .meet-elara-panel {
+    width: min(1400px, 100%);
+    padding-left: clamp(1.25rem, 2vw, 2.5rem);
+    padding-right: clamp(1.25rem, 2vw, 2.5rem);
+  }
+
+  .meet-elara-columns {
+    align-items: flex-start;
+    gap: clamp(0.75rem, 1vw, 1.5rem);
+  }
+
+  .meet-elara-text-column {
+    position: relative;
+    left: clamp(1rem, 2vw, 3rem);
+    width: min(85%, 900px);
+    margin-left: 0 !important;
+  }
+
+  .meet-elara-phone-column {
+    margin-left: 0 !important;
+  }
+}
+
+@media (min-width: 1360px) {
+  .meet-elara-text-column {
+    transform: translateX(-30%);
+  }
+}
+
+.meet-elara-section {
+  width: 100%;
+  background: linear-gradient(92deg, #f4f0ff, #fdf5ff 40%, #e0f3ff);
+  overflow: hidden;
+}
+
+.meet-elara-panel {
+  width: 100%;
+  max-width: min(1800px, 96vw);
+  padding-left: clamp(1rem, 4vw, 2.5rem);
+  padding-right: clamp(1rem, 4vw, 2.5rem);
+}
+
+.meet-elara-content {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -169,6 +218,24 @@ a {
       nav-aurora-orbit 18s ease-in-out infinite alternate,
       nav-aurora-hue 26s ease-in-out infinite;
     will-change: background-position, filter;
+  }
+
+  .nav-aurora-halo--paused {
+    animation: none;
+    will-change: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-aurora-halo {
+      animation: none;
+      will-change: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-animate-button-spin {
+      animation: none !important;
+    }
   }
 
   @keyframes nav-aurora-strobe {
