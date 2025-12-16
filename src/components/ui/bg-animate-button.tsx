@@ -28,7 +28,8 @@ const outerDivVariants = cva("relative inline-block overflow-hidden ", {
 
 const innerSpanVariants = cva(
   [
-    "absolute inset-[-1000%] m-auto block ", // Base styles for positioning and display
+    // Large enough to fully cover the button while avoiding excessively huge paint areas
+    "absolute inset-[-200%] m-auto block ",
   ],
   {
     variants: {
@@ -160,7 +161,12 @@ const BgAnimateButton = React.forwardRef<
   const wrapperClasses = cn(outerDivVariants({ size, rounded }), className)
   const gradientLayer =
     gradient && (
-      <span className={cn(innerSpanVariants({ gradient, animation }))} />
+      <span
+        className={cn(
+          innerSpanVariants({ gradient, animation }),
+          animation ? "bg-animate-button-spin" : undefined
+        )}
+      />
     )
   const buttonContent = (
     <>

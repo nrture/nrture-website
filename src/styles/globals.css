@@ -220,6 +220,24 @@ a {
     will-change: background-position, filter;
   }
 
+  .nav-aurora-halo--paused {
+    animation: none;
+    will-change: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-aurora-halo {
+      animation: none;
+      will-change: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-animate-button-spin {
+      animation: none !important;
+    }
+  }
+
   @keyframes nav-aurora-strobe {
     0% {
       background-position: 0% 50%;

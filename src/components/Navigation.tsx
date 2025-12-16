@@ -83,7 +83,9 @@ export function Navigation({ showHalo = true }: NavigationProps) {
           }`}
         >
           <div
-            className="nav-aurora-halo h-[420px] w-[240vw] max-w-none rounded-none bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[130px] sm:h-[460px] sm:blur-[150px]"
+            className={`nav-aurora-halo h-[420px] w-[240vw] max-w-none rounded-none bg-gradient-to-r from-[#5ec6ff] via-[#c880ff] to-[#5c5bff] blur-[130px] sm:h-[460px] sm:blur-[150px] ${
+              isAtTop ? "" : "nav-aurora-halo--paused"
+            }`}
             style={{
               transform: "translateY(-50px)",
               opacity: 0.85,
