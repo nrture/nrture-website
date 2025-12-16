@@ -12,9 +12,7 @@ export function ClosingCTASection() {
         </p>
         <div className="mt-9 flex justify-center">
           <BgAnimateButton
-            href="https://calendly.com/sushanta-kumar-das/nrtureai-demo"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/book-a-demo"
             gradient="navbar"
             animation="spin-slow"
             shadow="flat"

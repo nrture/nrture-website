@@ -58,6 +58,13 @@ const LazyTalkToUsPage = lazy(
     })),
 );
 
+const LazyBookDemoPage = lazy(
+  () =>
+    import("./pages/BookDemoPage").then((module) => ({
+      default: module.BookDemoPage,
+    })),
+);
+
 const LazyPrivacyPolicyPage = lazy(
   () =>
     import("./pages/PrivacyPolicyPage").then((module) => ({
@@ -107,6 +114,14 @@ function App() {
     return (
       <Suspense fallback={null}>
         <LazyTalkToUsPage />
+      </Suspense>
+    );
+  }
+
+  if (path.startsWith("/book-a-demo")) {
+    return (
+      <Suspense fallback={null}>
+        <LazyBookDemoPage />
       </Suspense>
     );
   }

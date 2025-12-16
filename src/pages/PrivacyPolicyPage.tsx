@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 export function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-white text-ink">
-      <Navigation />
+      <Navigation showHalo={false} />
       <main className="mx-auto mt-[15vh] w-full max-w-4xl px-6 pb-16">
         <div className="space-y-8">
           <div className="space-y-4">
@@ -98,4 +98,3 @@ export function PrivacyPolicyPage() {
     </div>
   );
 }
-

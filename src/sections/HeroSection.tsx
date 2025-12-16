@@ -60,9 +60,7 @@ export function HeroSection() {
           </p>
           <div className="mt-6 flex w-full justify-center">
             <BgAnimateButton
-              href="https://calendly.com/sushanta-kumar-das/nrtureai-demo"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/book-a-demo"
               gradient="navbar"
               animation="spin-slow"
               size="lg"
