@@ -96,7 +96,7 @@ export function ProblemSolutionSection() {
               </div>
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center">
                 <BgAnimateButton
-                  href="https://elara.nrture.ai/book-a-demo/"
+                  href="https://calendly.com/sushanta-kumar-das/nrtureai-demo"
                   target="_blank"
                   rel="noopener noreferrer"
                   gradient="navbar"

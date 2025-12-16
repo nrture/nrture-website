@@ -140,7 +140,7 @@ export function Navigation({ showHalo = true }: NavigationProps) {
                   </svg>
                 </button>
                 <BgAnimateButton
-                  href="https://elara.nrture.ai/book-a-demo/"
+                  href="https://calendly.com/sushanta-kumar-das/nrtureai-demo"
                   target="_blank"
                   rel="noopener noreferrer"
                   gradient="navbar"
@@ -185,7 +185,7 @@ export function Navigation({ showHalo = true }: NavigationProps) {
 
                 <div className="mt-5 flex flex-col gap-3">
                   <a
-                    href="https://elara.nrture.ai/book-a-demo/"
+                    href="https://calendly.com/sushanta-kumar-das/nrtureai-demo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-full border border-neutral-300 bg-white px-4 py-2 text-center text-sm font-semibold text-neutral-900 transition hover:border-neutral-500 hover:bg-neutral-100"
