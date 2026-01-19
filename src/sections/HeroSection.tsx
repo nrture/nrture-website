@@ -25,16 +25,28 @@ export function HeroSection() {
         </div>
         <div className="hero-content mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 pt-6 pb-12 text-center sm:px-6 sm:pt-12 sm:pb-16 md:gap-8 md:pt-16">
           <div className="relative z-20 flex flex-col items-center gap-3 text-xs font-semibold uppercase tracking-wide text-neutral-600 sm:flex-row sm:gap-4">
-            <div className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]">
+            <a
+              href="https://via.library.depaul.edu/ichrie_rr/vol10/iss6/5/"
+              target="_blank"
+              rel="noreferrer"
+              className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]"
+              aria-label="Read the published research on visitor behavior"
+            >
               <span className="inline-flex items-center gap-2">
                 Published research on visitor behavior
               </span>
-            </div>
-            <div className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]">
+            </a>
+            <a
+              href="https://tretaillabs.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="relative inline-flex items-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-[0.75rem] font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.18)]"
+              aria-label="Visit the 150M+ data points source"
+            >
               <span className="inline-flex items-center gap-2">
                 Trained on 150M+ data points. 
               </span>
-            </div>
+            </a>
           </div>
           <h1
             className="bg-clip-text text-[clamp(1.7rem,7.7vw,8.15rem)] font-display font-semibold leading-tight tracking-tight text-transparent -mt-3 sm:-mt-4"
