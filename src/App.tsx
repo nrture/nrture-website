@@ -65,6 +65,13 @@ const LazyPrivacyPolicyPage = lazy(
     })),
 );
 
+const LazyTermsOfUsePage = lazy(
+  () =>
+    import("./pages/TermsOfUsePage").then((module) => ({
+      default: module.TermsOfUsePage,
+    })),
+);
+
 function App() {
   const [path, setPath] = useState(
     typeof window !== "undefined" ? window.location.pathname : "/",
@@ -115,6 +122,14 @@ function App() {
     return (
       <Suspense fallback={null}>
         <LazyPrivacyPolicyPage />
+      </Suspense>
+    );
+  }
+
+  if (path.startsWith("/terms-of-use")) {
+    return (
+      <Suspense fallback={null}>
+        <LazyTermsOfUsePage />
       </Suspense>
     );
   }

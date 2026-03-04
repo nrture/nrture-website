@@ -28,7 +28,7 @@ export function Footer() {
                 Privacy Policy
               </a>
               <a
-                href="#terms"
+                href="/terms-of-use"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline-offset-4 transition hover:text-ink hover:underline"
