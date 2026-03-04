@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 export function TermsOfUsePage() {
   return (
     <div className="min-h-screen bg-white text-ink">
-      <Navigation />
+      <Navigation showHalo={false} />
       <main className="mx-auto mt-[15vh] w-full max-w-4xl px-6 pb-16">
         <div className="space-y-8">
           <div className="space-y-4">
@@ -38,7 +38,7 @@ export function TermsOfUsePage() {
                 an account and specify a password on the tRetail website in
                 order to access the Services:
               </p>
-              <ul>
+              <ul className="list-disc list-outside pl-6 space-y-1">
                 <li>
                   To create an account, the User must be at least 18 years old
                   and must provide truthful and accurate information about the
@@ -71,7 +71,7 @@ export function TermsOfUsePage() {
                 You may not, and may not allow any third-party, including Your
                 Users, to use the Services to:
               </p>
-              <ul>
+              <ul className="list-disc list-outside pl-6 space-y-1">
                 <li>
                   make any Services available to, or use any Services for the
                   benefit of, anyone other than You or Users;
@@ -181,7 +181,7 @@ export function TermsOfUsePage() {
                 You may not use the Services to solicit, display, store,
                 process, send or transmit:
               </p>
-              <ul>
+              <ul className="list-disc list-outside pl-6 space-y-1">
                 <li>
                   material that infringes or misappropriates a third party&apos;s
                   intellectual property or proprietary rights;
